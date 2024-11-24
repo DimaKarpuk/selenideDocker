@@ -14,7 +14,7 @@ COPY . /usr/src/app
 RUN chmod +x ./gradlew
 
 # Выполняем команду сборки и тестирования с помощью Gradle
-CMD ["./gradlew", "clean", "test"]
+CMD ["./gradlew", "clean", "test", "allureReport"]
 
 
 
