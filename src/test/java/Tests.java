@@ -19,7 +19,7 @@ public class Tests extends TestBase {
          });
      }
 
-     @Tag("uiT")
+
     @Test
     public void simple2Test(){
         Configuration.headless=true;
