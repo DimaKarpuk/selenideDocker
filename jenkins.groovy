@@ -18,6 +18,14 @@ node {
                 echo "Current branch is master"
             }
         }
+
+        try {
+            parallel getTestStages("test")
+        } finally {
+            stage ("Allure") {
+                generateAllure()
+            }
+        }
     }
 }
 
