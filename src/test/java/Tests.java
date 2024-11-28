@@ -9,7 +9,6 @@ import static io.qameta.allure.Allure.step;
 
 public class Tests extends TestBase {
 
-    @Tag("ui")
      @Test
     public void simpleTest(){
          Configuration.headless=true;
