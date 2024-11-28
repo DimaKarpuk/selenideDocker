@@ -20,7 +20,7 @@ node {
         }
 
         try {
-            parallel getTestStages(["ui", "uiT"])
+            parallel getTestStages(["test"])
         } finally {
             stage ("Allure") {
                 generateAllure()
@@ -28,19 +28,6 @@ node {
         }
     }
 }
-
-
-def getTestStages(testTags) {
-    def stages = [:]
-    testTags.each { tag ->
-        stages["${tag}"] = {
-            runTestWithTag(tag)
-        }
-    }
-    return stages
-}
-
-
 
 def runTestWithTag() {
         labelledShell(label: "Run", script: "test")
