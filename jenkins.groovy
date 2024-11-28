@@ -19,14 +19,6 @@ node {
             }
         }
 
-        try {
-            parallel getTestStages(["test"])
-        } finally {
-            stage ("Allure") {
-                generateAllure()
-            }
-        }
-
 //        try {
 //            stage("Run tests") {
 //                parallel(
