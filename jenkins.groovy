@@ -26,23 +26,6 @@ node {
                 generateAllure()
             }
         }
-
-//        try {
-//            stage("Run tests") {
-//                parallel(
-//                        'Api Tests': {
-//                            runTestWithTag("apiTests")
-//                        },
-//                        'Ui Tests': {
-//                            runTestWithTag("uiTests")
-//                        }
-//                )
-//            }
-//        } finally {
-//            stage("Allure") {
-//                generateAllure()
-//            }
-//        }
     }
 }
 
@@ -59,8 +42,8 @@ def getTestStages(testTags) {
 
 
 
-def runTestWithTag(String tag) {
-        labelledShell(label: "Run ${tag}", script: "test ${tag}")
+def runTestWithTag() {
+        labelledShell(label: "Run", script: "test")
 }
 
 
