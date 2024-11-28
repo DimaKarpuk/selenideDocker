@@ -60,11 +60,7 @@ def getTestStages(testTags) {
 
 
 def runTestWithTag(String tag) {
-    try {
         labelledShell(label: "Run ${tag}", script: "test ${tag}")
-    } finally {
-        echo "some failed tests"
-    }
 }
 
 
